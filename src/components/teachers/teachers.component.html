@@ -1,0 +1,12 @@
+<p>teachers works!</p>
+
+
+@for (item of teachers; track $index) {
+    <app-teacher-details [teacher]="item" (deleteEmit)="teacherService.deleteTeacher(item.id)"></app-teacher-details>
+}
+
+<button (click)="addTeacherScope()">add teacher</button>
+
+@if(add){
+    <app-add-teacher></app-add-teacher>
+}
